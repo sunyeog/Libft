@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:25:51 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/23 02:05:32 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/23 03:38:12 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		i++;
 	}
-	if (j != len)
-		return (0);
 	return (tmp);
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+{
+	char *str = ft_strtrim("lorem ipsum dolor sit amet", "tel");
+	printf("%s\n", str);
 }
