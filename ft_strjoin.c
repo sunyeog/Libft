@@ -10,19 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(const char *a)
-{
-	int	i;
-
-	i = 0;
-	while (a[i])
-		i++;
-	return (i);
-}
-
-int	sumlen(const char *s1, const char *s2)
+static int	sumlen(const char *s1, const char *s2)
 {
 	int	len1;
 	int	len2;

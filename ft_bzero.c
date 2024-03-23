@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:39:12 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/22 20:08:02 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/23 07:39:26 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	size_t	*t;
-
-	t = (size_t *)s;
-	i = 0;
-	while ((i < n) && (t[i]))
-	{
-		t[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:59:10 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/23 17:18:17 by sunhnoh          ###   ########.fr       */
+/*   Created: 2024/03/23 12:22:34 by sunhnoh           #+#    #+#             */
+/*   Updated: 2024/03/23 14:28:24 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	if (*s == c)
-		return ((char *)s);
-	return (0);
-}
-/*
-#include <stdio.h>
+	char	*temp;
+	size_t	i;
 
-int main()
-{
-	const char s[] = "abcdef";
-	int c = 'c';
-	printf("%s", ft_strchr(s, c));
-}*/
+	i = 0;
+	temp = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (temp == 0)
+		return (0);
+	temp[ft_strlen(s)] = 0;
+	while (s[i])
+	{
+		temp[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (temp);
+}

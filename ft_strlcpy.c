@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 10:18:43 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/09 11:42:47 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/23 19:26:27 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	i;
 
 	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	while (src[i] && ((i + 1) < size))
 	{
 		dst[i] = src[i];

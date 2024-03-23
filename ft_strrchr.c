@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 21:38:44 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/09 22:30:54 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/23 17:20:32 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strrchr(const char *s, int c)
 			temp = s;
 		s++;
 	}
+	if (*s == c)
+		temp = s;
 	return ((char *)temp);
 }
 /*

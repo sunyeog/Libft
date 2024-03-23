@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 11:43:21 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/09 13:20:13 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/23 17:48:46 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	lsrc;
 	size_t	isrc;
 
+	if (size == 0)
+		return (ft_strlen(src));
 	idst = ft_strlen(dst);
 	isrc = 0;
 	ldst = ft_strlen(dst);

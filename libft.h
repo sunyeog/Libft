@@ -6,7 +6,7 @@
 /*   By: kyouhele <kyouhele@student.42gyeongsan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 21:47:20 by kyouhele          #+#    #+#             */
-/*   Updated: 2024/03/05 22:31:53 by kyouhele         ###   ########.fr       */
+/*   Updated: 2024/03/23 14:52:58 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

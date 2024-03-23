@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 13:59:10 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/23 17:18:17 by sunhnoh          ###   ########.fr       */
+/*   Created: 2024/03/23 14:28:55 by sunhnoh           #+#    #+#             */
+/*   Updated: 2024/03/23 15:33:57 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	while (*s)
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		(*f)(i, &s[i]);
+		i++;
 	}
-	if (*s == c)
-		return ((char *)s);
-	return (0);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	const char s[] = "abcdef";
-	int c = 'c';
-	printf("%s", ft_strchr(s, c));
-}*/
