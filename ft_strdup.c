@@ -6,14 +6,13 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 20:30:51 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/22 22:36:53 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/24 14:12:48 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 

@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 19:41:38 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/22 20:29:35 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/24 13:42:00 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*temp;
 
+	if (size != 0 && ((nmemb * size) / size != nmemb))
+		return (0);
 	temp = malloc(nmemb * size);
 	if (temp == 0)
 		return (0);

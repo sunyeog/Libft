@@ -6,7 +6,7 @@
 /*   By: sunhnoh <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 03:41:00 by sunhnoh           #+#    #+#             */
-/*   Updated: 2024/03/23 19:23:54 by sunhnoh          ###   ########.fr       */
+/*   Updated: 2024/03/24 14:31:27 by sunhnoh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,16 @@ static int	sep_test(char a, char c)
 	return (0);
 }
 
-static int	count_strs(const char *s, char c)
+static char	**ft_isnul(char **res, int cnt)
 {
-	int	i;
-	int	cnt;
-
-	i = 0;
-	cnt = 0;
-	while (s[i])
+	if (res[cnt] == NULL)
 	{
-		if (sep_test(s[i + 1], c) == 1
-			&& sep_test(s[i], c) == 0)
-			cnt++;
-		i++;
+		while (--cnt)
+			free(res[cnt]);
+		free(res);
+		res = NULL;
 	}
-	return (cnt);
+	return (res);
 }
 
 static void	fill_malloc(char *s, char c, char *res)
@@ -71,6 +66,8 @@ static void	save_malloc(const char *s, char c, char **res)
 			while (sep_test(s[i + j], c) == 0)
 				j++;
 			res[cnt] = (char *)malloc(sizeof(char) * (j + 1));
+			if (! ft_isnul(res, cnt))
+				return ;
 			fill_malloc(tmp + i, c, res[cnt]);
 			i = i + j;
 			cnt++;
@@ -81,11 +78,20 @@ static void	save_malloc(const char *s, char c, char **res)
 char	**ft_split(char const *s, char c)
 {
 	int		cnt;
+	int		i;
 	char	**res;
 
 	if (s == NULL)
 		return (NULL);
-	cnt = count_strs(s, c);
+	i = 0;
+	cnt = 0;
+	while (s[i])
+	{
+		if (sep_test(s[i + 1], c) == 1
+			&& sep_test(s[i], c) == 0)
+			cnt++;
+		i++;
+	}
 	res = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (res == NULL)
 		return (NULL);

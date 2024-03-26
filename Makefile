@@ -31,6 +31,3 @@ fclean : clean
 re : fclean all
 bonus :	
 	make BONUS_ON=1 all
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
